@@ -1,3 +1,4 @@
+/* Contact Section */
 /* Global Styles */
 * {
     margin: 0;
@@ -5,11 +6,14 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* ทำให้ body และ html กินพื้นที่ 100% ของหน้าจอ */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #1b1b1b;
     color: #eae7dc;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -41,24 +45,6 @@ nav .menu {
     gap: 20px;
 }
 
-/* Remove underline and set default color for links */
-a {
-    text-decoration: none;
-    color: inherit; /* Makes the link inherit the color of its parent element */
-}
-
-/* Optional: Styling specifically for game links */
-.games-grid .game a {
-    display: block;
-    text-align: center;
-}
-
-/* Styling for hover effects if needed */
-.games-grid .game a:hover {
-    opacity: 0.9; /* Slightly fades on hover */
-}
-
-
 nav .menu a {
     color: #eae7dc;
     text-decoration: none;
@@ -71,54 +57,72 @@ nav .menu a:hover {
     color: #ffcc00;
 }
 
-/* Games Section */
-.games-section {
+
+
+.contact-section {
     padding-top: 100px;
     text-align: center;
     padding-bottom: 50px;
+    color: #eae7dc;
 }
 
-.games-section h1 {
+.contact-section h1 {
     font-size: 2.5rem;
     color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #ccc;
     margin-bottom: 40px;
 }
 
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+.contact-grid {
+    display: flex;
     justify-content: center;
-    padding: 0 40px;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-.game {
+.contact-item {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    color: #eae7dc;
+    width: 250px;
     transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.game:hover {
+.contact-item:hover {
     transform: translateY(-10px);
 }
 
-.game img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.game h2 {
-    font-size: 1.5rem;
+.contact-item i {
+    color: #ffcc00;
     margin-bottom: 10px;
 }
 
-.game p {
+.contact-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #00aaff;
     font-size: 1rem;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-item p {
+    font-size: 1.2rem;
+    color: #fff;
 }
 
 /* Footer */
@@ -126,8 +130,8 @@ footer {
     background-color: #1b1b1b;
     color: #eae7dc;
     text-align: center;
-    padding: 10px 0; /* ลด padding */
-    font-size: 0.8rem; /* ลดขนาดข้อความใน footer */
+    padding: 10px 0;
+    font-size: 0.8rem;
     width: 100%;
     border-top: 1px solid #333;
     position: relative;
