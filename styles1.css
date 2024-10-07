@@ -21,7 +21,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: #1b1b1b;
-    padding: 20px;
+    padding: 10px 20px; /* ลด padding */
     width: 100%;
     position: fixed;
     top: 0;
@@ -30,9 +30,10 @@ nav {
 }
 
 nav .logo {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* ลดขนาดโลโก้ */
     font-weight: bold;
-    color: #eae7dc;
+    color: #ffcc00;
+    text-transform: uppercase;
 }
 
 nav .menu {
@@ -43,9 +44,9 @@ nav .menu {
 nav .menu a {
     color: #eae7dc;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem; /* ลดขนาดเมนู */
     text-transform: uppercase;
-    position: relative;
+    font-weight: 500;
 }
 
 nav .menu a:hover {
@@ -107,7 +108,10 @@ footer {
     background-color: #1b1b1b;
     color: #eae7dc;
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9rem;
+    padding: 10px 0; /* ลด padding */
+    font-size: 0.8rem; /* ลดขนาดข้อความใน footer */
     width: 100%;
+    border-top: 1px solid #333;
+    position: relative;
+    bottom: 0;
 }

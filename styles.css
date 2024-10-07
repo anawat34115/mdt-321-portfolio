@@ -5,11 +5,14 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* ทำให้ body และ html กินพื้นที่ 100% ของหน้าจอ */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1b1b1b 0%, #333 100%);
+    background-color: #1b1b1b;
     color: #eae7dc;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,22 +23,20 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(27, 27, 27, 0.9);
-    padding: 20px;
+    background-color: #1b1b1b;
+    padding: 10px 20px; /* ลด padding */
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px); /* Add blur effect */
 }
 
 nav .logo {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* ลดขนาดโลโก้ */
     font-weight: bold;
     color: #ffcc00;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 nav .menu {
@@ -46,26 +47,9 @@ nav .menu {
 nav .menu a {
     color: #eae7dc;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem; /* ลดขนาดเมนู */
     text-transform: uppercase;
-    position: relative;
     font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-nav .menu a::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: #ffcc00;
-    transition: width 0.3s ease;
-}
-
-nav .menu a:hover::after {
-    width: 100%;
 }
 
 nav .menu a:hover {
@@ -77,10 +61,12 @@ nav .menu a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 100px; /* Prevent overlap with fixed navbar */
-    height: 100%;
-    width: 90%;
+    padding-top: 60px; /* ลด padding เพื่อพอดีกับหน้าจอ */
+    width: 85%;
     margin: 0 auto;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    height: calc(100vh - 120px); /* ปรับความสูงให้อยู่ใน viewport */
 }
 
 /* Left Side - Image/Graphic */
@@ -89,11 +75,13 @@ nav .menu a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 35%; /* ลดขนาดความกว้างของ graphic side */
+    margin-right: 20px;
 }
 
 .graphic-side img {
     width: 100%;
-    max-width: 400px;
+    max-width: 700px; /* ลดขนาดของภาพ */
     border-radius: 15px;
     object-fit: contain;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -101,44 +89,67 @@ nav .menu a:hover {
 }
 
 .graphic-side img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 /* Right Side - Content */
 .content-side {
     flex: 1;
-    padding-left: 50px;
-    max-width: 600px;
+    padding-left: 50px; /* ลด padding */
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .content-side h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem; /* ลดขนาดหัวข้อ */
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #ffcc00;
     text-transform: uppercase;
 }
 
 .content-side p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.1rem; /* ลดขนาดข้อความ */
+    margin-bottom: 20px;
     line-height: 1.6;
+    max-width: 90%;
     color: #ddd;
+}
+
+/* Personal Information Section */
+ul.personal-info {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0; /* ลด margin */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* จัดแบ่ง 2 คอลัมน์ */
+    row-gap: 10px;
+}
+
+ul.personal-info li {
+    font-size: 1rem;
+}
+
+ul.personal-info li strong {
+    color: #ffcc00; /* เน้นหัวข้อด้วยสีเหลือง */
 }
 
 /* Achievements & Skills */
 .achievements {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 15px; /* ลดช่องว่างระหว่าง achievement */
+    width: 100%;
 }
 
 .achievement {
     display: flex;
     align-items: center;
     background-color: #333;
-    padding: 15px;
+    padding: 10px; /* ลด padding ของ achievement */
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -150,13 +161,13 @@ nav .menu a:hover {
 }
 
 .achievement i {
-    font-size: 2rem;
-    margin-right: 15px;
+    font-size: 1.8rem; /* ลดขนาด icon */
+    margin-right: 10px;
     color: #ffcc00;
 }
 
 .achievement span {
-    font-size: 1.2rem;
+    font-size: 1rem; /* ลดขนาดข้อความใน achievement */
 }
 
 /* Footer */
@@ -164,8 +175,10 @@ footer {
     background-color: #1b1b1b;
     color: #eae7dc;
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9rem;
+    padding: 10px 0; /* ลด padding */
+    font-size: 0.8rem; /* ลดขนาดข้อความใน footer */
     width: 100%;
     border-top: 1px solid #333;
+    position: relative;
+    bottom: 0;
 }
