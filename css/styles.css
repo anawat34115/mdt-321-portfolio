@@ -6,7 +6,7 @@
 }
 
 html, body {
-    height: 100%; /* ทำให้ body และ html กินพื้นที่ 100% ของหน้าจอ */
+    height: 100%;
 }
 
 body {
@@ -24,7 +24,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: #1b1b1b;
-    padding: 10px 20px; /* ลด padding */
+    padding: 10px 20px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -33,7 +33,7 @@ nav {
 }
 
 nav .logo {
-    font-size: 1.8rem; /* ลดขนาดโลโก้ */
+    font-size: 1.8rem;
     font-weight: bold;
     color: #ffcc00;
     text-transform: uppercase;
@@ -47,7 +47,7 @@ nav .menu {
 nav .menu a {
     color: #eae7dc;
     text-decoration: none;
-    font-size: 1rem; /* ลดขนาดเมนู */
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -61,12 +61,12 @@ nav .menu a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 60px; /* ลด padding เพื่อพอดีกับหน้าจอ */
+    padding-top: 60px;
     width: 85%;
     margin: 0 auto;
     flex-wrap: wrap;
     flex-grow: 1;
-    height: calc(100vh - 120px); /* ปรับความสูงให้อยู่ใน viewport */
+    height: calc(100vh - 120px);
 }
 
 /* Left Side - Image/Graphic */
@@ -75,13 +75,13 @@ nav .menu a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 35%; /* ลดขนาดความกว้างของ graphic side */
+    max-width: 35%;
     margin-right: 20px;
 }
 
 .graphic-side img {
     width: 100%;
-    max-width: 700px; /* ลดขนาดของภาพ */
+    max-width: 700px;
     border-radius: 15px;
     object-fit: contain;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -96,7 +96,7 @@ nav .menu a:hover {
 /* Right Side - Content */
 .content-side {
     flex: 1;
-    padding-left: 50px; /* ลด padding */
+    padding-left: 50px;
     max-width: 60%;
     display: flex;
     flex-direction: column;
@@ -104,7 +104,7 @@ nav .menu a:hover {
 }
 
 .content-side h1 {
-    font-size: 2.5rem; /* ลดขนาดหัวข้อ */
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 15px;
     color: #ffcc00;
@@ -112,7 +112,7 @@ nav .menu a:hover {
 }
 
 .content-side p {
-    font-size: 1.1rem; /* ลดขนาดข้อความ */
+    font-size: 1.1rem;
     margin-bottom: 20px;
     line-height: 1.6;
     max-width: 90%;
@@ -123,9 +123,9 @@ nav .menu a:hover {
 ul.personal-info {
     list-style: none;
     padding: 0;
-    margin: 10px 0; /* ลด margin */
+    margin: 10px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* จัดแบ่ง 2 คอลัมน์ */
+    grid-template-columns: 1fr 1fr;
     row-gap: 10px;
 }
 
@@ -134,14 +134,14 @@ ul.personal-info li {
 }
 
 ul.personal-info li strong {
-    color: #ffcc00; /* เน้นหัวข้อด้วยสีเหลือง */
+    color: #ffcc00;
 }
 
 /* Achievements & Skills */
 .achievements {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px; /* ลดช่องว่างระหว่าง achievement */
+    gap: 15px;
     width: 100%;
 }
 
@@ -149,7 +149,7 @@ ul.personal-info li strong {
     display: flex;
     align-items: center;
     background-color: #333;
-    padding: 10px; /* ลด padding ของ achievement */
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -161,13 +161,13 @@ ul.personal-info li strong {
 }
 
 .achievement i {
-    font-size: 1.8rem; /* ลดขนาด icon */
+    font-size: 1.8rem;
     margin-right: 10px;
     color: #ffcc00;
 }
 
 .achievement span {
-    font-size: 1rem; /* ลดขนาดข้อความใน achievement */
+    font-size: 1rem;
 }
 
 /* Footer */
@@ -175,10 +175,59 @@ footer {
     background-color: #1b1b1b;
     color: #eae7dc;
     text-align: center;
-    padding: 10px 0; /* ลด padding */
-    font-size: 0.8rem; /* ลดขนาดข้อความใน footer */
+    padding: 10px 0;
+    font-size: 0.8rem;
     width: 100%;
     border-top: 1px solid #333;
     position: relative;
     bottom: 0;
+}
+
+/* Media Queries for Responsive Design */
+
+/* สำหรับหน้าจอขนาดเล็ก (เช่น มือถือ) */
+@media (max-width: 768px) {
+    .main-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .graphic-side {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content-side {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    ul.personal-info {
+        grid-template-columns: 1fr;
+    }
+
+    .achievements {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* สำหรับแท็บเล็ต */
+@media (max-width: 1024px) {
+    .graphic-side {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content-side {
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    ul.personal-info {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .achievements {
+        grid-template-columns: 1fr;
+    }
 }
